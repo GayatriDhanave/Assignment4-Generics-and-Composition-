@@ -15,4 +15,5 @@ public class UserRepository implements Repository<User, Integer> {
     public User findById(Integer id) {
         return users.containsKey(id) ? users.get(id) : null;
     }
+
 }

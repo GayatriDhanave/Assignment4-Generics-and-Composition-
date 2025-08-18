@@ -85,8 +85,8 @@ public class Main {
 
     private static void productOperations () {
         int ch = 0;
-        while (ch != 3) {
-            System.out.println("1. Save Product\n2. Find Product By ID\n3. Exit\n");
+        while (ch != 4) {
+            System.out.println("1. Save Product\n2. Find Product By ID\n3. Update Product\n4.Exit\n");
             ch = sc.nextInt();
             switch (ch) {
                 case 1:
@@ -105,6 +105,13 @@ public class Main {
                     System.out.println(productRepository.findById(pId));
                     break;
                 case 3:
+                    System.out.println("Enter product ID: ");
+                    long id=sc.nextInt();
+                    System.out.println("Enter price: ");
+                    int cost= sc.nextInt();
+                    productRepository.update(id, cost);
+                    break;
+                case 4:
                     break;
                 default:
                     System.out.println("Invalid choice");
